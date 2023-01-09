@@ -1,7 +1,7 @@
 # Sliding Puzzle
 > This game is a sliding puzzle with variable table sizes.
 
-![Puzzle](https://github.com/MiaadKimiagari/Sliding-Puzzle/blob/main/screenshots/title.jpg)
+![Puzzle](https://github.com/MiaadKimiagari/Sliding-Puzzle/blob/main/screenshots/title.jpg | width=100)
 
 ## How To Solve The Table?
 > There is always an unoccupied tile that can be moved by pressing the arrow keys on the keyboard. Tiles in the same row or column as the unoccupied tile can be moved by sliding them horizontally or vertically, respectively. The goal of the puzzle is to place the tiles in ascending numerical order.
