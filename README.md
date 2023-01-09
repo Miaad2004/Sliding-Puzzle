@@ -2,7 +2,7 @@
 > This game is a sliding puzzle with variable table sizes.
 
 <p align="center">
-  <img src="https://github.com/MiaadKimiagari/Sliding-Puzzle/blob/main/screenshots/title.jpg" />
+  <img src="https://github.com/Miaad2004/Sliding-Puzzle/blob/main/screenshots/title.jpg" />
 </p>
 
 ## How To Solve The Table?
@@ -10,7 +10,7 @@
 For more information check out: www.instructables.com/How-To-Solve-The-15-Puzzle
 
 # Gameplay
-![Gameplay](https://github.com/MiaadKimiagari/Sliding-Puzzle/blob/main/screenshots/gameplay.gif)
+![Gameplay](https://github.com/Miaad2004/Sliding-Puzzle/blob/main/screenshots/gameplay.gif)
 
 # How Does It Work?
 ## Generating a Random Table
@@ -19,10 +19,10 @@ For more information check out: www.instructables.com/How-To-Solve-The-15-Puzzle
 ## Graphical Table
 > Tables bigger than 4 by 4 are printed as numbers rather than graphical objects.
 
-![Large Table](https://github.com/MiaadKimiagari/Sliding-Puzzle/blob/main/screenshots/largeTable.jpg)
+![Large Table](https://github.com/Miaad2004/Sliding-Puzzle/blob/main/screenshots/largeTable.jpg)
 
 ## How Are The Scores Calculated?
 > Scores are calculated based on the table size, difficulty level, number of movements & the time taken.
 
 ## Scoreboard
-![Scoreboard](https://github.com/MiaadKimiagari/Sliding-Puzzle/blob/main/screenshots/scoreboard.jpg)
+![Scoreboard](https://github.com/Miaad2004/Sliding-Puzzle/blob/main/screenshots/scoreboard.jpg)
