@@ -1,6 +1,9 @@
 # Sliding Puzzle
 > This game is a sliding puzzle with variable table sizes.
 
+<p align="center">
+  <img src="https://github.com/MiaadKimiagari/Sliding-Puzzle/blob/main/screenshots/title.jpg" />
+</p>
 ![Puzzle](https://github.com/MiaadKimiagari/Sliding-Puzzle/blob/main/screenshots/title.jpg)
 
 ## How To Solve The Table?
