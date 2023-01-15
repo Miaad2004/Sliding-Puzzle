@@ -1,6 +1,7 @@
 /*
 * Fundamentals Of Programming Project
 * SLIDING-PUZZLE By Miaad Kimiagari
+* https://github.com/Miaad2004/Sliding-Puzzle
 * 1/3/2023
 * For more info on the 15-Puzzle check out https://en.wikipedia.org/wiki/15_puzzle & https://15puzzle.netlify.app/
 * C++ Language Standard: ISO C++20 Standard
@@ -156,7 +157,7 @@ public:
         CLEAR_UP_THE_SCREEN;
 
         // Method 1) Print the elements as graphical objects defined in fonts.cpp
-        if (GRAPHICAL_OUTPUT && tableSize <= 4)
+        if (GRAPHICAL_OUTPUT && (tableSize <= 4))
             for (int i = 0; i < tableSize; i++)        // For each row
             {
                 // Find the indexes of correctly positioned elements
@@ -423,7 +424,7 @@ int main()
     std::srand((unsigned)std::time(NULL));
 
     // Variables
-    char CONSOLE = 0;
+    char cmd = 0;
 
     // Welcome page
     WAIT;
@@ -448,15 +449,15 @@ int main()
         player.printTheTable();
 
         // Get command
-    # ifdef WINDOWS
-        CONSOLE = _getch();       // Keyboard input (Windows only) 
-    #endif
-    # ifdef LINUX
-        std::cin >> CONSOLE;
-    # endif
+        # ifdef WINDOWS
+            cmd = _getch();       // Keyboard input (Windows only) 
+        #endif
+        # ifdef LINUX
+            std::cin >> cmd;
+        # endif
 
         // Handle the command
-        switch (CONSOLE)
+        switch (cmd)
         {
         case KEY_UP: player.move(up); break;
         case KEY_DOWN: player.move(down); break;
@@ -464,19 +465,20 @@ int main()
         case KEY_LEFT: player.move(left); break;
         }
 
-        if (CONSOLE == 's')
+        if (cmd == 's')
             print::scoreboard();
 
-        else if (player.hasEnded() || CONSOLE == 'q')
+        else if (player.hasEnded() || cmd == 'q')
         {
             // Calculate the time frame
-            auto stop = std::chrono::high_resolution_clock::now();
+            auto stop = std::chrono::high_resolution_clock::now();       // std::chrono::steady_clock::time_point
             player.duration += std::chrono::duration_cast<std::chrono::microseconds>(stop - startTime).count() / 1000000;    // Calculate the duration in seconds
 
             // Calculate the score
-            player.score += pow(player.tableSize, 2) * (100 / log10((player.duration / 60 + sqrt(player.movementCount))));
+            player.score = pow(player.tableSize, 2) * (100 / log10((player.duration / 60 + sqrt(player.movementCount))));
             switch (player.difficultyLevel)
             {
+            case easy: player.score *= 1;
             case normal: player.score *= 1.5;
             case hard: player.score *= 3;
             }
@@ -484,6 +486,7 @@ int main()
             player.printResult();
             player.save();
             WAIT;
+            SET_CONSOLE_COLOR(COLOR_CONSOLE_DEFAULT);
             break;
         }
     }

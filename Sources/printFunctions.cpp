@@ -171,7 +171,7 @@ namespace print {
         struct Number
         {
             std::vector <std::istringstream> streams;   // 2-digit numbers have multiple streams
-            bool hasMultipleNumbers = false;
+            bool hasMultipleDigits = false;
             bool isColored = false;
             int value = 0;                              // The number's numeric value
         };
@@ -186,7 +186,7 @@ namespace print {
             number->value = row[i];
 
             if (number->value >= 10)                  // If the number->value has multiple numbers
-                number->hasMultipleNumbers = true;    // You can instead of 'digit->' use number->
+                number->hasMultipleDigits = true;    // You can instead of 'digit->' use number->
 
             if (coloredIndexes.find(i) != coloredIndexes.end())
                 number->isColored = true;
@@ -214,7 +214,7 @@ namespace print {
                     setTextColor(COLOR_DEFAULT);
 
                 // print
-                if (!number->hasMultipleNumbers)                  // Before printing If it's a single number add half of the padding
+                if (!number->hasMultipleDigits)                  // Before printing If it's a single number add half of the padding
                     printChar(' ', font::maxCharWidth / 2);
 
                 // Handle each stream for the current number
@@ -225,7 +225,7 @@ namespace print {
                     std::cout << line;
                 }
 
-                if (!number->hasMultipleNumbers)                  // After printing If it's a single number add the other half of the padding
+                if (!number->hasMultipleDigits)                  // After printing If it's a single number add the other half of the padding
                     printChar(' ', font::maxCharWidth / 2);
 
                 printChar(' ', font::maxCharWidth / 2);           // Add padding between the columns
